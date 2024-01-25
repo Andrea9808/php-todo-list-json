@@ -6,34 +6,34 @@
 
 
     //creo un array
-    $todos = [
-        [
-            'task' => 'Comprare il pane',
-            'completed' => false,
-        ],
-        [
-            'task' => 'Pulire il soggiorno',
-            'completed' => true,
-        ],
-        [
-            'task' => 'Stendere i panni',
-            'completed' => false,
-        ],
-        [
-            'task' => 'Fare la lavatrice',
-            'completed' => false,
-        ],
-        [
-            'task' => 'Scrivere codice',
-            'completed' => true,
-        ],
-    ];
+    // $todos = [
+    //     [
+    //         'task' => 'Comprare il pane',
+    //         'completed' => false,
+    //     ],
+    //     [
+    //         'task' => 'Pulire il soggiorno',
+    //         'completed' => true,
+    //     ],
+    //     [
+    //         'task' => 'Stendere i panni',
+    //         'completed' => false,
+    //     ],
+    //     [
+    //         'task' => 'Fare la lavatrice',
+    //         'completed' => false,
+    //     ],
+    //     [
+    //         'task' => 'Scrivere codice',
+    //         'completed' => true,
+    //     ],
+    // ];
 
     //converte l'array $todos in una stringa JSON
-    $jsonTodos = json_encode($todos);
+    // $jsonTodos = json_encode($todos);
 
     //salva i dati covertiti nel file che crea .json
-    file_put_contents("todos.json", $jsonTodos);
+    // file_put_contents("todos.json", $jsonTodos);
 
     
 

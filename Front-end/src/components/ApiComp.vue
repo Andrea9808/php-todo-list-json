@@ -13,14 +13,13 @@
 
     mounted(){
 
-        const t = this;
-        axios
-            .get('http://localhost/php-todo-list-json/todosApi.php')
+      axios
+            .get('http://localhost/php-todo-list-json/Back-end/todosApi.php')
             .then(res => {
-                //JSON.stringify = è una funzione che converte un oggetto JavaScript in una stringa JSON.
-                //console.log("data: " + JSON.stringify(res.data));
+              //JSON.stringify = è una funzione che converte un oggetto JavaScript in una stringa JSON.
+              //console.log("data: " + JSON.stringify(res.data));
 
-                t.todos = res.data;
+              this.todos = res.data;
             })
             .catch(err => console.error(err));
 
