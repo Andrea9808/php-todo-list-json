@@ -1,8 +1,8 @@
 
 <?php
     //imposta l'intestazione HTTP per specificare che il tipo di contenuto della risposta è di tipo JSON. 
-    //utile quando si restituiscono dati JSON dal server al client,
-    header('Content-Type: application/json');
+    //utile quando si restituiscono dati JSON dal server al client.
+    //header('Content-Type: application/json');
 
 
     //creo un array
