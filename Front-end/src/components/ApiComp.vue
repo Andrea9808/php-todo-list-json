@@ -16,6 +16,8 @@
     },
 
     methods: {
+
+      // PUSH TASK
       pushTask(){
 
         //definisco il parametro
@@ -43,6 +45,8 @@
 
       },
 
+
+      // CANCELLA TASK
       deleteTask(index){
 
         const params = {
@@ -101,6 +105,7 @@
     <ul class="todo-list">
 
       <li v-for="(todo, index) in todos" :key="index" class="todo-item">
+        
         {{ todo.task }}
 
         <button @click="deleteTask(index)" class="delete-button">CANCELLA</button>

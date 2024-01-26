@@ -9,7 +9,7 @@
     header("Access-Control-Allow-Headers: X-Requested-With");
 
     //riferimento al server dove verrà posizionato
-    header("Access-Control-Allow-Origin: http://localhost:5173");
+    header("Access-Control-Allow-Origin: http://localhost:5175");
 
 
     //NON NE ABBIAMO PIU' BISOGNO PERCHè LO DECODIFICHIAMO TRAMITE IL FILE JSON
@@ -39,7 +39,7 @@
     //prende tutti i dati all'interno del file json
     $jsonTodos = file_get_contents("todos.json");
 
-    //per vedere se tutto ok
+    //stampo
     echo $jsonTodos;
 
 ?>
