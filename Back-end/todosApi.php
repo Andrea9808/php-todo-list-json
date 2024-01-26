@@ -11,31 +11,33 @@
     //riferimento al server dove verrà posizionato
     header("Access-Control-Allow-Origin: http://localhost:5173");
 
-    $todos = [
-            [
-                'task' => 'Comprare il pane',
-                'completed' => false,
-            ],
-            [
-                'task' => 'Pulire il soggiorno',
-                'completed' => true,
-            ],
-            [
-                'task' => 'Stendere i panni',
-                'completed' => false,
-            ],
-            [
-                'task' => 'Fare la lavatrice',
-                'completed' => false,
-            ],
-            [
-                'task' => 'Scrivere codice',
-                'completed' => true,
-            ],
-    ];
 
-    //converte stringa json in una struttura PHP
-    $jsonTodos = json_encode($todos);
+    //NON NE ABBIAMO PIU' BISOGNO PERCHè LO DECODIFICHIAMO TRAMITE IL FILE JSON
+    // $todos = [
+    //         [
+    //             'task' => 'Comprare il pane',
+    //             'completed' => false,
+    //         ],
+    //         [
+    //             'task' => 'Pulire il soggiorno',
+    //             'completed' => true,
+    //         ],
+    //         [
+    //             'task' => 'Stendere i panni',
+    //             'completed' => false,
+    //         ],
+    //         [
+    //             'task' => 'Fare la lavatrice',
+    //             'completed' => false,
+    //         ],
+    //         [
+    //             'task' => 'Scrivere codice',
+    //             'completed' => true,
+    //         ],
+    // ];
+
+    //prende tutti i dati all'interno del file json
+    $jsonTodos = file_get_contents("todos.json");
 
     //per vedere se tutto ok
     echo $jsonTodos;
