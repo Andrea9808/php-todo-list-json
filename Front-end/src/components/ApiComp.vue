@@ -1,6 +1,6 @@
 <script>
 
-    import axios from 'axios';
+  import axios from 'axios';
 
   export default{
     name: 'ApiComp',
@@ -49,6 +49,7 @@
       // CANCELLA TASK
       deleteTask(index){
 
+        //definisco il parametro
         const params = {
 
           params: {
@@ -58,20 +59,47 @@
           }
         };
 
+        //chiamata API
         axios
         .get('http://localhost/php-todo-list-json/Back-end/deleteTask.php', params)
         .then(res => {
 
-          console.log(res.data);
           this.todos = res.data;
+
         })
         .catch(err => console.log("delete error" + err));
+      },
+
+
+      //TOGGLE TASK
+      toggleTask(index){
+
+        //definisco il parametro
+        const params = {
+
+          params: {
+
+            index:index
+
+          }
+        };
+
+        // chiamata API
+        axios
+        .get('http://localhost/php-todo-list-json/Back-end/toggle.php', params)
+
+        .then(res => {
+
+          this.todos = res.data;
+
+        })
+        .catch(err => console.log("toggle error" + err));
       }
     },
 
     mounted(){
 
-      //chiamata API
+      //chiamata API generale
       axios
             .get('http://localhost/php-todo-list-json/Back-end/todosApi.php')
             .then(res => {
@@ -104,9 +132,9 @@
 
     <ul class="todo-list">
 
-      <li v-for="(todo, index) in todos" :key="index" class="todo-item">
-        
-        {{ todo.task }}
+      <li  v-for="(todo, index) in todos" :key="index" class="todo-item" >
+
+        <span :class="{ 'completed-task': todo.completed }" @click="toggleTask(index)" >{{ todo.task }} </span>
 
         <button @click="deleteTask(index)" class="delete-button">CANCELLA</button>
 
@@ -140,25 +168,20 @@
   padding: 8px 12px;
   font-size: 15px;
   cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
 }
 .delete-button {
   padding: 8px 12px;
   font-size: 10px;
   cursor: pointer;
-}
-
-.submit-button {
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-}
-
-.delete-button {
   background-color: #ff3333;
   color: #fff;
   border: none;
   border-radius: 5px;
 }
+
 
 .todo-list {
   list-style-type: none;
@@ -173,5 +196,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.completed-task {
+    text-decoration: line-through;
+  }
+
+li{
+  cursor: pointer;
 }
 </style>

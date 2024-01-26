@@ -8,7 +8,7 @@
     header("Access-Control-Allow-Headers: X-Requested-With");
 
     //riferimento al server dove verrà posizionato
-    header("Access-Control-Allow-Origin: http://localhost:5175");
+    header("Access-Control-Allow-Origin: http://localhost:5176");
 
     $index = $_GET['index'];
 

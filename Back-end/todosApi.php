@@ -9,7 +9,7 @@
     header("Access-Control-Allow-Headers: X-Requested-With");
 
     //riferimento al server dove verrà posizionato
-    header("Access-Control-Allow-Origin: http://localhost:5175");
+    header("Access-Control-Allow-Origin: http://localhost:5176");
 
 
     //NON NE ABBIAMO PIU' BISOGNO PERCHè LO DECODIFICHIAMO TRAMITE IL FILE JSON
